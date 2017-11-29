@@ -67,6 +67,34 @@ def add_city_menu():
         print('\nOpção inválida\n')
 
 
+def remove_city_menu():
+    os.system('clear')
+
+    print('\n1 - Remover cidade\n')
+    print('2 - Voltar para o menu principal\n')
+
+    remove_city = input()
+
+    if option == '1':
+        if remove_city in city_list and remove_city in city_list:
+            city_list.remove(remove_city)
+            i = 0
+            for pair int graph:
+                if graph[i].city_1 == remove_city or graph[i].city_2 == remove_city:
+                    del graph[i]
+                i += 1
+        else:
+            print('\nCidade não cadastrada!!\n')
+            time.sleep(2)
+            remove_city_menu()
+    elif option == '2':
+        main_menu()
+    else:
+        remove_city_menu()
+
+
+
+
 def main_menu():
     os.system('clear')
     print('Escolha uma opção!\n')
