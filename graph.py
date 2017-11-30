@@ -21,7 +21,7 @@ def minimum_spanning_tree(graph, initial_city):
         cur_pair = heap.delMin()
         cur_node = graph.getVertex(cur_pair[1])
         
-        if cur_node not in visited_nodes:
+        if cur_node.id not in visited_nodes:
             solution.append(cur_pair)
             visited_nodes.append(cur_node.id)
             for conect in cur_node.getConnections():

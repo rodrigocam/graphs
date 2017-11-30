@@ -11,7 +11,8 @@ def add_connection_menu():
     os.system('clear')
 
     print('\n1 - Adicionar caminho\n')
-    print('2 - Voltar para o menu principal\n')
+    print('2 - Ler cidades do arquivo\n')
+    print('3 - Voltar ao menu inicial\n')
     option = input()
 
     if option == '1':
@@ -27,6 +28,16 @@ def add_connection_menu():
         graph.addEdge(city1, city2, cost)
         add_connection_menu()
     elif option == '2':
+        f = open('cities.txt')
+        for line in f:
+            normalized_line = line.replace(' ', '')
+            normalized_line = normalized_line.replace('\n', '')
+            data = normalized_line.split('-')
+            if len(data) == 3:
+                graph.addEdge(data[0], data[1], data[2])
+        f.close()
+        add_connection_menu()
+    elif option == '3':
         main_menu()
     else:
         print('\nOpção inválida\n')
