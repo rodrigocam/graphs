@@ -7,7 +7,7 @@ import time
 
 graph = Graph()
 
-def add_road_menu():
+def add_connection_menu():
     os.system('clear')
 
     print('\n1 - Adicionar caminho\n')
@@ -25,12 +25,12 @@ def add_road_menu():
         cost = int(input('Tamanho do caminho - '))
 
         graph.addEdge(city1, city2, cost)
-        add_road_menu()
+        add_connection_menu()
     elif option == '2':
         main_menu()
     else:
         print('\nOpção inválida\n')
-        add_road_menu()
+        add_connection_menu()
 
 
 def add_city_menu():
@@ -54,10 +54,8 @@ def add_city_menu():
 
 
 def generate_minimum_network():
-    # print(graph.vertices)
     show_graph(graph, 'initial_graph.png')
     new_graph = minimum_spanning_tree(graph, 'BSB')
-    # print(graph.vertices)
     show_graph(new_graph, 'minimum_spanning_tree.png')
     main_menu()
 
@@ -74,7 +72,7 @@ def main_menu():
     if option == '1':
         add_city_menu()
     elif option == '2':
-        add_road_menu()
+        add_connection_menu()
     elif option == '3':
         generate_minimum_network()
     elif option == '4':

@@ -30,7 +30,7 @@ def minimum_spanning_tree(graph, initial_city):
         else:
             continue
 
-    #print(solution)
+    print('Solution: ' + str(solution))
 
     for city_1, city_2 in solution:
         new_graph.addEdge(city_1, city_2, 0)
