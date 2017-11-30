@@ -1,0 +1,6 @@
+
+matplotlib==1.5.1
+networkx==2.0
+pythonds==1.2.1
+system-service==0.3
+
