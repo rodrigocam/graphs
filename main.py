@@ -54,8 +54,9 @@ def add_city_menu():
 
 
 def generate_minimum_network():
+    initial_city = input('Digita a cidade inicial: ')
     show_graph(graph, 'initial_graph.png')
-    new_graph = minimum_spanning_tree(graph, 'BSB')
+    new_graph = minimum_spanning_tree(graph, initial_city)
     show_graph(new_graph, 'minimum_spanning_tree.png')
     main_menu()
 
